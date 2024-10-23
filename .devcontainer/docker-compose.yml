@@ -1,0 +1,13 @@
+services:
+  blogApp:
+    build:
+      context: ..  # Specifies the build context (parent directory)
+      dockerfile: .devcontainer/Dockerfile  # Path to the Dockerfile in the .devcontainer directory
+    container_name: stunning-braccoli-website
+    image: stunning-braccoli-website
+    volumes:
+      - stunning-braccoli-volume-website:/workspace  # Mounts the volume to /workspace
+    ports:
+      - "3000:3000"  # Maps port 3000
+volumes:
+  stunning-braccoli-volume-website:  # Defines the volume
